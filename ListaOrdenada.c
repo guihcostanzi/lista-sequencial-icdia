@@ -56,6 +56,12 @@ int tamanho(LISTA *l)
   return l->nroElem;
 }
 
+/* Retornar a capacidade da lista (número de elementos que podem ser inseridos) */
+int capacidade(LISTA *l)
+{
+  return l->capacidade;
+}
+
 /* Retornar o tamanho em bytes da lista. Neste caso, depende do tamanho do vetor dinâmico */
 int tamanhoEmBytes(LISTA *l)
 {

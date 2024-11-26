@@ -27,6 +27,7 @@ typedef struct
 void inicializarLista(LISTA *l);
 void exibirLista(LISTA *l);
 int tamanho(LISTA *l);
+int capacidade(LISTA *l);
 void reinicializarLista(LISTA *l);
 int buscaSequencial(LISTA *l, TIPOCHAVE ch);
 int buscaSentinela(LISTA *l, TIPOCHAVE ch);

@@ -14,6 +14,7 @@ int main() {
   printf("\n-- Lista inicial -- \n");
 
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
@@ -22,30 +23,35 @@ int main() {
   printf("\nAdicionando elemento ... \n");
   inserirElemListaOrd(&lista, reg);
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
   reg.chave = 3;
   printf("\nAdicionando elemento ... \n");
   inserirElemListaOrd(&lista, reg);
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
   reg.chave = 4;
   printf("\nAdicionando elemento ... \n");
   inserirElemListaOrd(&lista, reg);
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
   reg.chave = 1;
   printf("\nAdicionando elemento ... \n");
   inserirElemListaOrd(&lista, reg);
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
   reg.chave = 12;
   printf("\nAdicionando elemento ... \n");
   inserirElemListaOrd(&lista, reg);
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
@@ -64,7 +70,7 @@ int main() {
 
   // Excluir alguns elementos da lista
 
-  printf("\n-- Excluíndo elementos da lista -- \n");
+  printf("\n-- Excluindo elementos da lista -- \n");
 
   if (excluirElemLista(&lista, 4)) printf("Exclusao bem sucedida: 4.\n");
   if (excluirElemLista(&lista, 8)) printf("Exclusao bem sucedida: 8 (não existe na lista).\n");
@@ -72,6 +78,22 @@ int main() {
 
   // Exibir lista após exclusões
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
+  printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
+  printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
+
+  // Inserir elementos em grande quantidade
+
+  printf("\n-- Inserindo elementos em grande quantidade -- \n");
+
+  for(int i = 50; i < 100; i++){
+    reg.chave = i;
+    inserirElemListaOrd(&lista, reg);
+  }
+
+  // Exibir lista após inserts
+  exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
@@ -79,6 +101,7 @@ int main() {
   printf("\n-- Reinicializando a lista --\n");
   reinicializarLista(&lista);
   exibirLista(&lista);
+  printf("Capacidade da lista: %i.\n", capacidade(&lista));
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
