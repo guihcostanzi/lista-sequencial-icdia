@@ -8,6 +8,31 @@
   - Quando ocorre inserção, checa se o número de elementos atingiu a capacidade máxima. Se sim, dobra a capacidade da lista;
   - Quando ocorre inserção, checa se o número de elementos é menor que 25% da capacidade da lista, se sim, reduz a capacidade pela metade;
   - Quando ocorre exclusão, faz a mesma checagem, e também reduz a capacidade pela metade caso a condição seja atendida;
+
+  ```
+  /* Função para redimensionar a lista (aumentar ou diminuir a capacidade) */
+  void resize(LISTA *l)
+  {
+    if (l->nroElem == l->capacidade)
+    {
+      // Se a lista estiver cheia, dobra a capacidade
+      l->capacidade *= 2;
+    }
+    else if (l->nroElem <= l->capacidade / 4)
+    {
+      // Se o número de elementos cair para 25% da capacidade, reduz a capacidade pela metade
+      l->capacidade /= 2;
+    }
+
+    // Redimensiona a lista usando realloc
+    l->A = (REGISTRO *)realloc(l->A, l->capacidade * sizeof(REGISTRO));
+    if (l->A == NULL)
+    {
+      printf("Erro ao redimensionar memória!\n");
+      exit(ERRO);
+    }
+  } 
+  ```
 4. Implementação de função capacidade(), que retorna a capacidade da lista;
 5. Adequações e melhorias no arquivo de testes para melhor acompanhamento da lista e de seu comportamento pelo terminal;
   - Divisão por setores e ações;
