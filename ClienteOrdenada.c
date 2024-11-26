@@ -1,5 +1,6 @@
 // main.c
 #include "ListaOrdenada.h"
+#include "ListaOrdenada.c"
 
 int main() {
   LISTA lista;
@@ -51,6 +52,7 @@ int main() {
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
   // Reinicializar a lista
+  printf("-- Reinicializando a lista ... --\n");
   reinicializarLista(&lista);
   exibirLista(&lista);
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
