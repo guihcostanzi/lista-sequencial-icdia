@@ -121,5 +121,7 @@ int main() {
   printf("Numero de elementos na lista: %i.\n", tamanho(&lista));
   printf("Tamanho da lista (em bytes): %i.\n", tamanhoEmBytes(&lista));
 
+  printf("\n\nATENCAO: Depois de reiniciar a lista, ocorre o uso da funcao free para liberar o espaco alocado na memoria.\n\n");
+
   return 0;
 }
